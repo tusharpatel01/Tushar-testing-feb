@@ -2,15 +2,17 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import dotenv from "dotenv";
-import connectDB from "../config/db.js";
-import userRoute from "../routes/user.route.js";
-import companyRoute from "../routes/company.route.js";
-import jobRoute from "../routes/job.route.js";
-import applicationRoute from "../routes/application.route.js";
+import connectDB from "./config/db.js";
+import userRoute from "./routes/user.route.js";
+import companyRoute from "./routes/company.route.js";
+import jobRoute from "./routes/job.route.js";
+import applicationRoute from "./routes/application.route.js";
 import path from "path";
 dotenv.config({});
 
 const app = express();
+
+const PORT = process.env.PORT || 8000;
 
 // const dirname=path.resolve();
 
@@ -33,6 +35,10 @@ app.get('/',(req,res) => {
     res.status(200).json({message:"Welcome to JobVista API"}    
     )
 })
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 
 
 export default app;
