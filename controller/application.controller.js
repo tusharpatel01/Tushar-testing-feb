@@ -1,4 +1,5 @@
-import { Application } from "../models/applicaation.model.js"; 
+
+import { Application } from "../models/application.model.js";
 import { Job } from "../models/job.model.js";
 
 // Apply for a job
